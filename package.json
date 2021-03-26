@@ -198,6 +198,7 @@
         "get-port": "^3.2.0",
         "get-value": "^2.0.6",
         "getpass": "^0.1.7",
+        "gh-pages": "^3.1.0",
         "glob": "^7.1.6",
         "glob-parent": "^3.1.0",
         "glob-to-regexp": "^0.3.0",
@@ -339,6 +340,7 @@
         "ora": "^2.1.0",
         "os-browserify": "^0.3.0",
         "pako": "^1.0.11",
+        "parcel-plugin-nuke-dist": "^1.0.1",
         "parse-asn1": "^5.1.6",
         "parse-json": "^4.0.0",
         "parse5": "^5.1.0",
@@ -539,8 +541,9 @@
     },
     "scripts": {
         "dev": "parcel src/index.html",
-        "build": "parcel build src/index.html",
-
+        "build": "parcel build src/index.html --public-url /goit-js-hw-10-food-service/",
+        "deploy": "gh-pages -d dist",
+        "predeploy": "npm run build"
     },
     "repository": {
         "type": "git",
@@ -551,6 +554,6 @@
     "bugs": {
         "url": "https://github.com/tarkravch/goit-js-hw-10-food-service/issues"
     },
-    "homepage": "https://github.com/tarkravch/goit-js-hw-10-food-service#readme",
+    "homepage": "https://tarkravch.github.io/goit-js-hw-10-food-service",
     "keywords": []
 }
