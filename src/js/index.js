@@ -1,29 +1,22 @@
-import menuCard from './templates/card.hbs';
-import menuList from './menu.json';
+import menuCard from '/templates/card.hbs';
+import menuList from '/menu.json';
 
-console.log(menuCard);
+// Розмітка карточок
 
-const themeSwitcher = document.querySelector('#theme-switch-toggle');
-const themeObject = document.querySelector('body');
+const cardMarkUp = document.querySelector('.menu');
+cardMarkUp.insertAdjacentHTML('beforeend', cardMarkUpGenerator);
 
-const Theme = {
-    LIGHT: 'light-theme',
-    DARK: 'dark-theme',
+const cardMarkUpGenerator = createCards(menuList);
+console.log(cardMarkUpGenerator);
+
+function createCards(menuList) {
+
+    return menuCard(menuList);
 };
+/* const cardMarkUpGenerator = createCards(menuList);
+console.log(cardMarkUpGenerator);
 
-themeSwitcher.addEventListener('change', newThemeApply);
-
-
-function newThemeApply() {
-    if (!themeSwitcher.hasAttribute('checked')) {
-        themeSwitcher.setAttribute('checked', 'true');
-        themeObject.classList.remove('light-theme');
-        themeObject.classList.add('dark-theme');
-    } else {
-        themeSwitcher.removeAttribute('checked');
-        themeObject.classList.remove('dark-theme');
-        themeObject.classList.add('light-theme');
-    }
-
-
-};
+function createCards(menuList) {
+    return menuList.map(menuItem => menuCard(menuList)).join('');
+    // return menuList.map(menuCard).join('');
+} */
