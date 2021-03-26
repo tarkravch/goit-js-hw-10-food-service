@@ -4,9 +4,11 @@ import menuList from '/menu.json';
 // Розмітка карточок
 
 const cardMarkUp = document.querySelector('.menu');
-cardMarkUp.insertAdjacentHTML('beforeend', cardMarkUpGenerator);
+
 
 const cardMarkUpGenerator = createCards(menuList);
+
+cardMarkUp.insertAdjacentHTML('beforeend', cardMarkUpGenerator);
 console.log(cardMarkUpGenerator);
 
 function createCards(menuList) {

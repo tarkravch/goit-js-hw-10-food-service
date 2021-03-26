@@ -2148,7 +2148,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 var templateFunction = _handlebars.default.template({
   "1": function _(container, depth0, helpers, partials, data) {
-    var helper,
+    var stack1,
+        helper,
         alias1 = depth0 != null ? depth0 : container.nullContext || {},
         alias2 = container.hooks.helperMissing,
         alias3 = "function",
@@ -2231,91 +2232,26 @@ var templateFunction = _handlebars.default.template({
           "column": 19
         }
       }
-    }) : helper)) + "\r\n			</p>\r\n\r\n			<ul class=\"tag-list\">\r\n				<li class=\"tag-list__item\">" + alias4((helper = (helper = lookupProperty(helpers, "ingredients") || (depth0 != null ? lookupProperty(depth0, "ingredients") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
-      "name": "ingredients",
+    }) : helper)) + "\r\n			</p>\r\n\r\n			<ul class=\"tag-list\">\r\n" + ((stack1 = lookupProperty(helpers, "each").call(alias1, depth0 != null ? lookupProperty(depth0, "ingredients") : depth0, {
+      "name": "each",
       "hash": {},
+      "fn": container.program(2, data, 0),
+      "inverse": container.noop,
       "data": data,
       "loc": {
         "start": {
           "line": 17,
-          "column": 31
-        },
-        "end": {
-          "line": 17,
-          "column": 46
-        }
-      }
-    }) : helper)) + "</li>\r\n				<li class=\"tag-list__item\">" + alias4((helper = (helper = lookupProperty(helpers, "ingredients") || (depth0 != null ? lookupProperty(depth0, "ingredients") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
-      "name": "ingredients",
-      "hash": {},
-      "data": data,
-      "loc": {
-        "start": {
-          "line": 18,
-          "column": 31
-        },
-        "end": {
-          "line": 18,
-          "column": 46
-        }
-      }
-    }) : helper)) + "</li>\r\n				<li class=\"tag-list__item\">" + alias4((helper = (helper = lookupProperty(helpers, "ingredients") || (depth0 != null ? lookupProperty(depth0, "ingredients") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
-      "name": "ingredients",
-      "hash": {},
-      "data": data,
-      "loc": {
-        "start": {
-          "line": 19,
-          "column": 31
+          "column": 4
         },
         "end": {
           "line": 19,
-          "column": 46
+          "column": 13
         }
       }
-    }) : helper)) + "</li>\r\n				<li class=\"tag-list__item\">" + alias4((helper = (helper = lookupProperty(helpers, "ingredients") || (depth0 != null ? lookupProperty(depth0, "ingredients") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
-      "name": "ingredients",
-      "hash": {},
-      "data": data,
-      "loc": {
-        "start": {
-          "line": 20,
-          "column": 31
-        },
-        "end": {
-          "line": 20,
-          "column": 46
-        }
-      }
-    }) : helper)) + "</li>\r\n				<li class=\"tag-list__item\">" + alias4((helper = (helper = lookupProperty(helpers, "ingredients") || (depth0 != null ? lookupProperty(depth0, "ingredients") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
-      "name": "ingredients",
-      "hash": {},
-      "data": data,
-      "loc": {
-        "start": {
-          "line": 21,
-          "column": 31
-        },
-        "end": {
-          "line": 21,
-          "column": 46
-        }
-      }
-    }) : helper)) + " </li>\r\n				<li class=\"tag-list__item\">" + alias4((helper = (helper = lookupProperty(helpers, "ingredients") || (depth0 != null ? lookupProperty(depth0, "ingredients") : depth0)) != null ? helper : alias2, _typeof(helper) === alias3 ? helper.call(alias1, {
-      "name": "ingredients",
-      "hash": {},
-      "data": data,
-      "loc": {
-        "start": {
-          "line": 22,
-          "column": 31
-        },
-        "end": {
-          "line": 22,
-          "column": 46
-        }
-      }
-    }) : helper)) + "</li>\r\n			</ul>\r\n		</div>\r\n\r\n		<button class=\"card__button button\">\r\n			<i class=\"material-icons button__icon\"> shopping_cart </i>\r\n			В корзину\r\n		</button>\r\n	</article>\r\n</li>\r\n";
+    })) != null ? stack1 : "") + "			</ul>\r\n		</div>\r\n\r\n		<button class=\"card__button button\">\r\n			<i class=\"material-icons button__icon\"> shopping_cart </i>\r\n			В корзину\r\n		</button>\r\n	</article>\r\n</li>\r\n";
+  },
+  "2": function _(container, depth0, helpers, partials, data) {
+    return "				<li class=\"tag-list__item\">" + container.escapeExpression(container.lambda(depth0, depth0)) + "</li>\r\n";
   },
   "compiler": [8, ">= 4.3.0"],
   "main": function main(container, depth0, helpers, partials, data) {
@@ -2340,7 +2276,7 @@ var templateFunction = _handlebars.default.template({
           "column": 0
         },
         "end": {
-          "line": 32,
+          "line": 29,
           "column": 9
         }
       }
@@ -2420,8 +2356,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // Розмітка карточок
 var cardMarkUp = document.querySelector('.menu');
-cardMarkUp.insertAdjacentHTML('beforeend', cardMarkUpGenerator);
 var cardMarkUpGenerator = createCards(_menu.default);
+cardMarkUp.insertAdjacentHTML('beforeend', cardMarkUpGenerator);
 console.log(cardMarkUpGenerator);
 
 function createCards(menuList) {
