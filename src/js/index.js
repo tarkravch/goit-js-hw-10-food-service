@@ -15,10 +15,3 @@ function createCards(menuList) {
 
     return menuCard(menuList);
 };
-/* const cardMarkUpGenerator = createCards(menuList);
-console.log(cardMarkUpGenerator);
-
-function createCards(menuList) {
-    return menuList.map(menuItem => menuCard(menuList)).join('');
-    // return menuList.map(menuCard).join('');
-} */
